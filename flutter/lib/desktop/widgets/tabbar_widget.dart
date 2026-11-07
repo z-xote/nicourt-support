@@ -7,6 +7,7 @@ import 'package:desktop_multi_window/desktop_multi_window.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart' hide TabBarTheme;
 import 'package:flutter_hbb/common.dart';
+import 'package:flutter_hbb/common/brand.dart';
 import 'package:flutter_hbb/consts.dart';
 import 'package:flutter_hbb/desktop/pages/remote_page.dart';
 import 'package:flutter_hbb/desktop/pages/view_camera_page.dart';
@@ -651,7 +652,7 @@ class _DesktopTabState extends State<DesktopTab>
                         Offstage(
                             offstage: !showTitle,
                             child: const Text(
-                              "RustDesk",
+                              kBrandProductName,
                               style: TextStyle(fontSize: 13),
                             ).marginOnly(left: 2))
                       ]).marginOnly(

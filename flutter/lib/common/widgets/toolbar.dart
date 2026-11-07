@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hbb/common.dart';
+import 'package:flutter_hbb/common/brand.dart';
 import 'package:flutter_hbb/common/shared_state.dart';
 import 'package:flutter_hbb/common/widgets/dialog.dart';
 import 'package:flutter_hbb/common/widgets/login.dart';
@@ -18,8 +19,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 bool isEditOsPassword = false;
 const String kPeerOptionAllowWaylandKeyboard = 'allow-wayland-keyboard';
-const String kWaylandKeyboardIssueUrl =
-    'https://github.com/rustdesk/rustdesk/issues/14586';
+const String kWaylandKeyboardIssueUrl = kBrandSupportUrl;
 final Set<String> _waylandKeyboardPromptSuppressedConnectionIds = <String>{};
 
 Future<bool> openWaylandKeyboardIssueUrl() {
