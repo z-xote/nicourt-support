@@ -491,12 +491,12 @@ jobs:
         if: env.UPLOAD_ARTIFACT == 'true'
         run: |
           pushd ./res/msi
-          mv ../../rustdesk/rustdesk.exe ../../rustdesk/Nicourt.exe
+          mv ../../rustdesk/rustdesk.exe ../../rustdesk/nicourt-support.exe
           python preprocess.py --arp -d ../../rustdesk
           nuget restore msi.sln
           $msiPlatform = if ('${{ matrix.job.arch }}' -eq 'aarch64') { 'ARM64' } else { 'x64' }
           msbuild msi.sln -p:Configuration=Release -p:Platform=$msiPlatform /p:TargetVersion=Windows10
-          mv ../../rustdesk/Nicourt.exe ../../rustdesk/rustdesk.exe
+          mv ../../rustdesk/nicourt-support.exe ../../rustdesk/rustdesk.exe
           $msi = Get-ChildItem ./Package/bin/*/Release/en-us/Package.msi | Select-Object -First 1
           mv $msi.FullName ../../SignOutput/rustdesk-${{ env.VERSION }}-${{ matrix.job.arch }}.msi
           sha256sum ../../SignOutput/rustdesk-*.msi
