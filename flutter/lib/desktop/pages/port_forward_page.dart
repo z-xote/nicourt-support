@@ -263,7 +263,7 @@ class _PortForwardPageState extends State<PortForwardPage>
           color: index % 2 == 0
               ? MyTheme.currentThemeMode() == ThemeMode.dark
                   ? const Color(0xFF202020)
-                  : const Color(0xFFF4F5F6)
+                  : MyTheme.surface0
               : Theme.of(context).colorScheme.background),
       child: Row(children: [
         text(pf.localPort.toString()),
