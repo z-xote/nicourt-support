@@ -728,7 +728,7 @@ List<TTextMenu> toolbarControls(BuildContext context, String id, FFI ffi) {
                   ffi.recordingModel.start
                       ? Icons.pause_circle_filled
                       : Icons.videocam_outlined,
-                  color: MyTheme.accent),
+                  color: MyTheme.accentOf(context)),
             )
           ],
         ),

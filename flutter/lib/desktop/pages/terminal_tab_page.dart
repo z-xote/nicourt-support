@@ -741,7 +741,7 @@ class _TerminalTabPageState extends State<TerminalTabPage> {
           controller: tabController,
           onWindowCloseButton: handleWindowCloseButton,
           tail: _buildAddButton(),
-          selectedBorderColor: MyTheme.accent,
+          selectedBorderColor: MyTheme.accentOf(context),
           labelGetter: DesktopTab.tablabelGetter,
           tabMenuBuilder: (key) {
             final parsed = _parseTabKey(key);

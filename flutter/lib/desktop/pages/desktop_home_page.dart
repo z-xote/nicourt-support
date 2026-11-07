@@ -197,7 +197,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
         children: [
           Container(
             width: 2,
-            decoration: const BoxDecoration(color: MyTheme.accent),
+            decoration: BoxDecoration(color: MyTheme.accentOf(context)),
           ).marginOnly(top: 5),
           Expanded(
             child: Padding(
@@ -304,7 +304,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
           Container(
             width: 2,
             height: 52,
-            decoration: BoxDecoration(color: MyTheme.accent),
+            decoration: BoxDecoration(color: MyTheme.accentOf(context)),
           ),
           Expanded(
             child: Padding(
@@ -962,7 +962,7 @@ void setPasswordDialog({VoidCallback? notEmptyCallback}) async {
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.key, color: MyTheme.accent),
+          Icon(Icons.key, color: MyTheme.accentOf(context)),
           Text(translate("Set Password")).paddingOnly(left: 10),
         ],
       ),

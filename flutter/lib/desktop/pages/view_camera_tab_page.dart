@@ -137,7 +137,7 @@ class _ViewCameraTabPageState extends State<ViewCameraTabPage> {
         controller: tabController,
         onWindowCloseButton: handleWindowCloseButton,
         tail: const AddButton(),
-        selectedBorderColor: MyTheme.accent,
+        selectedBorderColor: MyTheme.accentOf(context),
         pageViewBuilder: (pageView) => pageView,
         labelGetter: DesktopTab.tablabelGetter,
         tabBuilder: (key, icon, label, themeConf) => Obx(() {

@@ -296,7 +296,7 @@ class _MyGroupState extends State<MyGroup> {
                   width: 20,
                   height: 20,
                   child: Icon(IconFont.deviceGroupOutline,
-                      color: MyTheme.accent, size: 19),
+                      color: MyTheme.accentOf(context), size: 19),
                 ).marginOnly(right: 4),
                 Expanded(child: Text(name)),
               ],

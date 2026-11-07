@@ -53,18 +53,18 @@ class _ButtonState extends State<Button> {
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   color: pressed.value
-                      ? MyTheme.accent
+                      ? MyTheme.accentOf(context)
                       : (widget.isOutline
                           ? Colors.transparent
-                          : MyTheme.button),
+                          : MyTheme.accentOf(context)),
                   border: Border.all(
                     color: pressed.value
-                        ? MyTheme.accent
+                        ? MyTheme.accentOf(context)
                         : hover.value
                             ? MyTheme.hoverBorder
                             : (widget.isOutline
                                 ? widget.borderColor ?? MyTheme.border
-                                : MyTheme.button),
+                                : MyTheme.accentOf(context)),
                   ),
                   borderRadius: BorderRadius.circular(widget.radius ?? 5),
                 ),
@@ -77,7 +77,7 @@ class _ButtonState extends State<Button> {
                       color: widget.isOutline
                           ? widget.textColor ??
                               Theme.of(context).textTheme.titleLarge?.color
-                          : Colors.white),
+                          : MyTheme.onAccentOf(context)),
                 ).marginSymmetric(horizontal: 12),
               )),
         ));
@@ -132,16 +132,18 @@ class _FixedWidthButtonState extends State<FixedWidthButton> {
             alignment: Alignment.center,
             decoration: BoxDecoration(
               color: pressed.value
-                  ? MyTheme.accent
-                  : (widget.isOutline ? Colors.transparent : MyTheme.button),
+                  ? MyTheme.accentOf(context)
+                  : (widget.isOutline
+                      ? Colors.transparent
+                      : MyTheme.accentOf(context)),
               border: Border.all(
                 color: pressed.value
-                    ? MyTheme.accent
+                    ? MyTheme.accentOf(context)
                     : hover.value
                         ? MyTheme.hoverBorder
                         : (widget.isOutline
                             ? widget.borderColor ?? MyTheme.border
-                            : MyTheme.button),
+                            : MyTheme.accentOf(context)),
               ),
               borderRadius: BorderRadius.circular(widget.radius ?? 5),
             ),
@@ -160,7 +162,7 @@ class _FixedWidthButtonState extends State<FixedWidthButton> {
                         color: widget.isOutline
                             ? widget.textColor ??
                                 Theme.of(context).textTheme.titleLarge?.color
-                            : Colors.white),
+                            : MyTheme.onAccentOf(context)),
                   ).marginSymmetric(horizontal: 12),
                 ),
               ],

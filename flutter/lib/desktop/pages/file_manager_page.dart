@@ -287,7 +287,7 @@ class _FileManagerPageState extends State<FileManagerPage>
                                       shaderCallback: (bounds) =>
                                           LinearGradient(
                                         colors: [
-                                          Colors.white,
+                                          MyTheme.onAccentOf(context),
                                           Colors.transparent,
                                         ],
                                         stops: [item.percent, item.percent],
@@ -316,7 +316,7 @@ class _FileManagerPageState extends State<FileManagerPage>
                                   ),
                                   barRadius: Radius.circular(15),
                                   percent: item.percent,
-                                  progressColor: MyTheme.accent,
+                                  progressColor: MyTheme.accentOf(context),
                                   backgroundColor: Theme.of(context).hoverColor,
                                   lineHeight: kDesktopFileTransferRowHeight,
                                 ).paddingSymmetric(vertical: 8),
@@ -804,7 +804,7 @@ class _FileManagerViewState extends State<FileManagerView> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 SvgPicture.asset("assets/folder_new.svg",
-                                    colorFilter: svgColor(MyTheme.accent)),
+                                    colorFilter: svgColor(MyTheme.accentOf(context))),
                                 Text(
                                   translate("Create Folder"),
                                 ).paddingOnly(

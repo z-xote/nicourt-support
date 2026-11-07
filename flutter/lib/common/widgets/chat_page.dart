@@ -126,7 +126,7 @@ class ChatPage extends StatelessWidget implements PageShape {
                       sendButtonBuilder: defaultSendButton(
                         padding:
                             EdgeInsets.symmetric(horizontal: 6, vertical: 0),
-                        color: MyTheme.accent,
+                        color: MyTheme.accentOf(context),
                         icon: Icons.send_rounded,
                       ),
                     ),
@@ -143,11 +143,16 @@ class ChatPage extends StatelessWidget implements PageShape {
                               : CrossAxisAlignment.start,
                           children: <Widget>[
                             Text(message.text,
-                                style: TextStyle(color: Colors.white)),
+                                style: TextStyle(
+                                    color: isOwnMessage
+                                        ? MyTheme.onAccentOf(context)
+                                        : Colors.white)),
                             Text(
                               "${message.createdAt.hour}:${message.createdAt.minute.toString().padLeft(2, '0')}",
                               style: TextStyle(
-                                color: Colors.white,
+                                color: isOwnMessage
+                                    ? MyTheme.onAccentOf(context)
+                                    : Colors.white,
                                 fontSize: 8,
                               ),
                             ).marginOnly(top: 3),
@@ -159,7 +164,9 @@ class ChatPage extends StatelessWidget implements PageShape {
                         final isOwnMessage = message.user.id.isBlank!;
                         return defaultMessageDecoration(
                           color:
-                              isOwnMessage ? MyTheme.accent : Colors.grey.shade700,
+                              isOwnMessage
+                                  ? MyTheme.accentOf(context)
+                                  : Colors.grey.shade700,
                           borderTopLeft: 8,
                           borderTopRight: 8,
                           borderBottomRight: isOwnMessage ? 2 : 8,

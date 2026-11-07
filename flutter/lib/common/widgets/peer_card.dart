@@ -432,7 +432,7 @@ class _PeerCardState extends State<_PeerCard>
         child: selected
             ? Icon(
                 Icons.check_box,
-                color: MyTheme.accent,
+                color: MyTheme.accentOf(context),
               )
             : Icon(Icons.check_box_outline_blank),
       );
@@ -467,7 +467,7 @@ class _PeerCardState extends State<_PeerCard>
       final icon = selected
           ? Icon(
               Icons.check_box,
-              color: MyTheme.accent,
+              color: MyTheme.accentOf(context),
             )
           : Icon(Icons.check_box_outline_blank);
       final checkbox = isWebDesktop
@@ -483,7 +483,7 @@ class _PeerCardState extends State<_PeerCard>
       if (last) {
         return Container(
           decoration: BoxDecoration(
-              border: Border.all(color: MyTheme.accent, width: 1)),
+              border: Border.all(color: MyTheme.accentOf(context), width: 1)),
           child: checkbox,
         ).marginOnly(right: right);
       } else {

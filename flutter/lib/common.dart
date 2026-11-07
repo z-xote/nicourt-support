@@ -629,6 +629,12 @@ class MyTheme {
     return Theme.of(context).extension<TabbarTheme>()!;
   }
 
+  static Color accentOf(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark ? lime : accent;
+
+  static Color onAccentOf(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark ? ink : Colors.white;
+
   static ThemeMode themeModeFromString(String v) {
     switch (v) {
       case "light":
