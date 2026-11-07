@@ -17,6 +17,11 @@ on:
       - "appimage/**"
       - "flatpak/**"
 
+# The fork's default workflow token is read-only; flutter-build.yml's
+# generate-sbom and publish-signed-update-metadata jobs need contents: write.
+permissions:
+  contents: write
+
 jobs:
   run-ci:
     uses: ./.github/workflows/flutter-build.yml
